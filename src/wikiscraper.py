@@ -37,13 +37,13 @@ class MyHTMLParser(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag == 'table':
-            self.tables.append(self.tables_open.pop())
+            self.tables.append(tuple(self.tables_open.pop()))
 
         if tag == 'tr':
-            self.tables_open[-1].append(self.rows_open.pop())
+            self.tables_open[-1].append(tuple(self.rows_open.pop()))
 
         elif tag == 'th':
-            self.rows_open[-1].append(self.column_open.pop())
+            self.rows_open[-1].append(tuple(self.column_open.pop()))
 
     def handle_data(self, data):
         if self.column_open:
