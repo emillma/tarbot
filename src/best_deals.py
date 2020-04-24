@@ -7,9 +7,10 @@ Created on Fri Apr 24 15:43:53 2020
 
 import json
 import re
-
+import pprint
 from dealfinder import generate_deals
 from market_api import get_all_items
+import pprint
 
 def clean_name(item):
     quantity_pattern = re.compile(r'^(.*?)( ?\(\d*?/\d*?\))?$')
@@ -36,5 +37,5 @@ for deal in deals:
         pass
 
 gains = sorted(gains, key=lambda deal: deal[0], reverse=True)
-
-print(gains)
+pp = pprint.PrettyPrinter()
+pp.pprint(gains)
