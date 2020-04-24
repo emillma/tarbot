@@ -11,7 +11,6 @@ import re
 from dealfinder import generate_deals
 from market_api import get_all_items
 
-
 def clean_name(item):
     quantity_pattern = re.compile(r'^(.*?)( ?\(\d*?/\d*?\))?$')
     return quantity_pattern.match(item['name']).group(1)

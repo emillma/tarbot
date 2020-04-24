@@ -7,8 +7,9 @@ Created on Fri Apr 24 15:04:15 2020
 
 
 import requests
+import webbrowser
 
-
+webbrowser.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 MARKET_BASE_URL = 'https://tarkov-market.com/api/v1'
 KEY = {'x-api-key': '4jaKa2rAHW4lZzlM'}
 def intenret_path_join(*args):
